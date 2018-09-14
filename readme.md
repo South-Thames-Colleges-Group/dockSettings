@@ -51,35 +51,39 @@ Example file:
 
 source "/Library/STCG/Dock/ADgroups.txt"
 
+studentDock="/Library/STCG/Dock/studentDock.txt"
+staffDock="/Library/STCG/Dock/staffDock.txt"
+dockUtil="/usr/local/bin/dockutil"
+
 if id -Gn | grep -q -w "$KCstudent";
 then
     echo "-- $USER is a student --";
-    /usr/local/bin/dockutil --remove all -v
+    "$dockUtil" --remove all -v
     sleep 1
     while sD='' read -r line || [[ -n "$line" ]]
     do
 		echo "-- Adding" "$line" "--"
-	    /usr/local/bin/dockutil --add "$line" --no-restart -v
+	    "$dockUtil" --add "$line" --no-restart -v
         sleep 1
-    done < /Library/STCG/Dock/studentDock.txt
+    done < "$studentDock"
 
-    /usr/local/bin/dockutil --add '/Applications/Network Files' --view list --display folder -v
-    /usr/local/bin/dockutil --add "$HOME/Downloads" --view list --display folder --sort dateadded -v
+    "$dockUtil" --add '/Applications/Network Files' --view list --display folder -v
+    "$dockUtil" --add "$HOME/Downloads" --view list --display folder --sort dateadded -v
 elif id -Gn | grep -q -w "KCstaff";
 then
     echo "-- $USER is a member of staff --"
-    /usr/local/bin/dockutil --remove all
+    "$dockUtil" --remove all
     sleep 1
     while sD='' read -r line || [[ -n "$line" ]]
     do
 		echo "-- Adding" "$line" "--"
-	    /usr/local/bin/dockutil --add "$line" --no-restart -v
+	    "$dockUtil" --add "$line" --no-restart -v
         sleep 1
-    done < /Library/STCG/Dock/staffDock.txt
+    done < "$staffDock"
 
-    /usr/local/bin/dockutil --add "/Applications/Microsoft Windows.rdp" --no-restart -v
-    /usr/local/bin/dockutil --add '/Applications/Network Files' --view list --display folder -v
-    /usr/local/bin/dockutil --add "$HOME/Downloads" --view list --display folder --sort dateadded -v
+    "$dockUtil" --add "/Applications/Microsoft Windows.rdp" --no-restart -v
+    "$dockUtil" --add '/Applications/Network Files' --view list --display folder -v
+    "$dockUtil" --add "$HOME/Downloads" --view list --display folder --sort dateadded -v
 else
     echo "-- Not a student or staff memeber --";
 fi
