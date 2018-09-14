@@ -1,0 +1,9 @@
+# .DS_Store files!
+.DS_Store
+Icon?
+
+# our build directories
+dock*/build/
+
+# File with AD groups listed
+ADgroups.txt
