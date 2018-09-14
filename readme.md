@@ -16,11 +16,23 @@ Requirements
 - Use munkipkg to create a new folder
 - Use the following naming convention dock-site-room, or dock-site-department
 - Edit settings in build-info.plist
+- Create `payload/Library/STCG/Dock/ADgroups.txt`
 - Create `payload/Library/STCG/Dock/staffDock.txt`
 - Create `payload/Library/STCG/Dock/studentDock.txt`
 - Create `payload/usr/local/outset/login-once/outsetSetupDock-1.0.sh`
 - Fill in the appropriate infomation into each file
 - Create the installer `munkipkg . --export`
+
+## ADgroups.txt
+
+Example file, fill in the group name in AD that you want applied.
+
+```
+KCstaff="ADgroup"
+KCstudent="ADgroup"
+STCstaff="ADgroup"
+STCstudent="ADgroup"
+```
 
 ## staffdock.txt and studentdock.txt
 
@@ -55,7 +67,7 @@ studentDock="/Library/STCG/Dock/studentDock.txt"
 staffDock="/Library/STCG/Dock/staffDock.txt"
 dockUtil="/usr/local/bin/dockutil"
 
-if id -Gn | grep -q -w "$KCstudent";
+if id -Gn | grep -q -w "$KCstudent";    #Change to reflect location
 then
     echo "-- $USER is a student --";
     "$dockUtil" --remove all -v
@@ -69,7 +81,7 @@ then
 
     "$dockUtil" --add '/Applications/Network Files' --view list --display folder -v
     "$dockUtil" --add "$HOME/Downloads" --view list --display folder --sort dateadded -v
-elif id -Gn | grep -q -w "KCstaff";
+elif id -Gn | grep -q -w "KCstaff";     #Change to reflect location
 then
     echo "-- $USER is a member of staff --"
     "$dockUtil" --remove all
