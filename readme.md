@@ -2,7 +2,7 @@
 
 This project creates docks that are used in rooms throughout the college group.
 
-This will no longer be done with pkgs deployed to the Macs, but just an outset script run with Jamf.
+Jamf : This will no longer be done with pkgs deployed to the Macs, it will use an outset script runwith a login policy.
 
 Requirements
 
