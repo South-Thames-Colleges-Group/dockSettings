@@ -1,0 +1,6 @@
+/Applications/Launchpad.app
+/Applications/Safari.app
+/Applications/Google Chrome.app
+/Applications/Dictionary.app
+/Applications/Microsoft Word.app
+/Applications/Adobe Premiere Pro CC 2018/Adobe Premiere Pro CC 2018.app/Applications/Adobe Photoshop CC 2018/Adobe Photoshop CC 2018.app/Applications/Adobe Audition CC 2018/Adobe Audition CC 2018.app
