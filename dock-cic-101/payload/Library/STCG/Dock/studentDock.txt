@@ -1,0 +1,13 @@
+/Applications/Launchpad.app
+/Applications/Safari.app
+/Applications/Google Chrome.app
+/Applications/Photos.app
+/Applications/Microsoft Excel.app
+/Applications/Microsoft Word.app
+/Applications/Microsoft PowerPoint.app
+/Applications/Microsoft OneNote.app
+/Applications/Adobe Bridge CC 2018/Adobe Bridge CC 2018.app
+/Applications/Adobe Illustrator CC 2018/Adobe Illustrator.app
+/Applications/Adobe InDesign CC 2018/Adobe InDesign CC 2018.app
+/Applications/Adobe Photoshop CC 2018/Adobe Photoshop CC 2018.app
+/Applications/Adobe Premiere Pro CC 2018/Adobe Premiere Pro CC 2018.app
